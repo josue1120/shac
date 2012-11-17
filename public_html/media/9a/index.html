@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <head lang="en">
+        <meta charset="utf-8" />
+        <title>S.H.A.C - 9-A</title>
+    <!-- Hojas de Estilo - StyleSheet -->
+        <link rel="stylesheet" href="https://c9.io/josue1120/shac/workspace/bootstrap/css/bootstrap-responsive.css" type="text/css">
+        <link rel="stylesheet" href="https://c9.io/josue1120/shac/workspace/bootstrap/css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="https://c9.io/josue1120/shac/workspace/bootstrap/js/bootstrap.js" type="text/js">
+    </head>
+    <body>
+        <div class="navbar navbar-fixed-top navbar-inverse">
+            <div class="navbar-inner">
+                <div style="margin-top:10px; margin-bottom:10px;" class="row-fluid">
+                    <center>
+                        <span style="color:#FFFFFF; font-size:20px;">
+                            S.H.A.C
+                        </span>
+                        <br />
+                        <span style="color:#6E6E6E;">
+                            Sistema de horarios y Actividades para Colegios
+                        </span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top:63px;" class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="https://c9.io/josue1120/shac/workspace/public_html/index.html">Inicio</a></li>
+                    <li><a href="#">Preescolar</a></li>
+                    <li><a href="#">Primaria</a></li>
+                    <li><a href="#">Basica</a></li>
+                    <li class="active"><a href="#">Media</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <center><i class="icon-info-sign" style="vertical-align:-15%; opacity:0.4; filter: alpha(opacity=40)"></i><span style="font-size:15px;"> Esta aplicación esta en una versión de <strong>CREACIÓN</strong></span></center>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header"><i class="icon-calendar"></i> Cursos</li>
+                            <li class="active"><a href="https://c9.io/josue1120/shac/workspace/public_html/media/9a/index.html">9-A</a></li>
+                            <li><a href="https://c9.io/josue1120/shac/workspace/public_html/media/9b/index.html"> 9-B</a></li>
+                            <li><a href="#"> 10-A</a></li>
+                            <li><a href="#"> 10-B</a></li>
+                            <li><a href="#"> 11-A</a></li>
+                            <li><a href="#"> 11-B</a></li>
+                        </ul>
+                    </div><!--/.well -->
+                </div><!--/span-->
+            <div class="span10">
+                <div class="hero-unit">
+                    <h1>Calendario</h1>
+                        <?php
+                        include(“https://c9.io/josue1120/shac/workspace/public_html/table.php”);
+                        ?>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Dia</th>
+                                    <th>Asignaturas</th>
+                                    <th>Actividades</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="9">15/11/2012</td>
+                                    <td>Ciencias</td>
+                                    <td>Los ejercicios de Quimica Basica</td>
+                                </tr>
+                                <tr>
+                                    <td>Tecnologia</td>
+                                    <td>Trabajo Final</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+            </div><!--/span-->
+        </div><!--/row-->
+        <hr>
+        <footer>
+            <center><p>© Team Creativity Express - 2012</p></center>
+        </footer>
+    </div><!--/.fluid-container-->
+    </body>
+<html>

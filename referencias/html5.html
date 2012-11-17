@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+    <head>
+		<title>HTML5</title>
+		<style type="text/css">
+		header {
+			background-color: gray;
+			color white;
+		}
+		nav {
+			
+		}
+		article {
+			
+		}
+		aside {
+			
+		}
+		</style>
+	</head>
+	<body>
+	<!-- Here is <header> Tag -->
+		<header>
+			<center><h1>This is a Head</h1></center>
+		</header>
+	<!-- Here is <nav> Tag -->
+		<nav>
+			<ul>
+				<li>Inicio</li>
+				<li>Contacto</li>
+			</ul>
+		</nav>
+	<!-- Here is <section> Tag -->
+		<section>			<!-- Unica Tag que no puede llevar Style -->
+	<!-- Here is <article> Tag -->
+			<article>
+				This is a Article
+			</article>
+	<!-- Here is <aside> Tag -->
+			<aside>
+				This is a Aside - Login de Usuario - Sidebar
+			</aside>
+		</section>
+	<!-- Here is <hgroup> Tag -->
+		<hgroup>
+			<!-- Solo debe ir etiquetas h1 - h6 -->
+			<h1>Team Creativity Express</h1>
+			<h2>Revolucionando el mundo</h2>
+		</hgroup>
+		<hgroup>
+			<!-- Solo debe ir etiquetas h1 - h6 -->
+			<h4>Tutoriales y Soporte</h4>
+			<h5>Windows, Adobe y mucho mas</h5>
+		</hgroup>
+	<!-- Here is <canvas> Tag -->
+		<canvas id="myCanvas" width="40" height="40"> Tu navegador no puede mostrar este contenido </canvas>
+			<!-- Creada para Reemplazar el Flash -->
+		<script type="text/javascript" charset="utf-8">
+			var canvas = document.getElementById("myCanvas");
+			var ctx = canvas.getContext("2d");
+			ctx.fillRect(0,0,40,40)
+		</script>
+	<!-- Here is <audio> Tag -->
+		<audio controls="controls" autoplay="autoplay" loop="loop" preload="none" >
+			<!-- preload solo sirve si no esta autoplay y tiene 3 atributos: auto, metadata, none -->
+			<source src="audio.mp3" type="audio/mp3" />			<!-- Solo se reproducen en Safari e Internet Explorer -->
+			<source src="audio.ogg" type="audio/ogg" />			<!-- Solo se reproducen en Google Chrome, Mozilla, Opera -->
+			Tu navegador no es compatible con HTML5
+		</audio>
+	<!-- Here is <datalist> Tag -->
+		<input list="canales">
+		<datalist id="canales">
+			<option value="StudiosGraphicStone" />
+			<option value="CreativityTeam" />			
+		</datalist>
+	<!-- Here is <details> Tag -->
+		<!-- Solo funciona en Google Chrome -->
+		<details open>
+		<!-- El atributo "open" es para ver la lista automaticamente abierta -->
+			<summary> Canales </summary>
+			StudiosGraphicStone - CreativityTeam
+		</details>
+	<!-- Here is <figure> Tag -->
+		<!-- Esta etiqueta es para imagenes, diagramas, listas y es muy diferente a <img> cuando se pone una imagen -->
+		<!-- Esta etiqueta deja un salto de linea entre el texto e imagen, <img> lo pone de corrido -->
+		<p><figure>
+		<img src="http://teamcreativityexpress.com/cpcs/images/logo.jpg" width="50" height="57" />
+		<figcaption>Logo CPCS</figcaption>
+		</figure>Aca va el contenido principal de la pagina</p>
+	<!-- Here is <mark> Tag -->
+		<p>Powered by <mark style="background-color: red;">Josue</mark> Bustamante</p>
+	<!-- Here is <meter> Tag -->
+		<!-- Esta etiqueta puede medir Valores -->
+		<p>Temperatura</p>
+		<meter value="22" max="100" min="-20" high="35" low="50" optimum="20">
+			Tu navegador no reconoce este control
+		</meter>
+	<!-- Here is <output> Tag -->
+		<!-- Para devolver un valor o un resultado -->
+		<form onInput="resultado.value=parseInt(x.value) + parseInt(y.value)">
+			<input type="number" name="x" />
+			<input type="number" name="y" />
+			<output name=resultado for="x y"></output>
+		</form>
+	<!-- Here is <progress> Tag -->
+		<!-- No sirve para Safari e Internet Explorer -->
+		<progress value="90" max="100">
+			Tu navegador no soporta esta funcion
+		</progress>
+	<!-- Here is <time> Tag -->
+		<!-- Elemento posiblemente Eliminado -->
+		<p>La hora es: <time> 08:00 </time></p>
+		<time datetime="2012-11-12" pubdate> </time>
+	<!-- Here is <video> Tag -->
+		<video width="320" height="240" controls="controls" autoplay="autoplay" loop="loop" preload="none" muted="muted" poster="image.jpg">
+			<!-- Esta etiqueta es muy parecida a la de audio en su configiracion, pero tiene mas atributos -->
+			<!-- preload solo sirve si no esta autoplay y tiene 3 atributos: auto, metadata, none -->
+			<source src="video.mp4" type="video/mp4" />			<!-- Solo se reproducen en Safari e Internet Explorer -->
+			<source src="video.ogg" type="video/ogg" />			<!-- Solo se reproducen en Google Chrome, Mozilla, Opera -->
+			Tu navegador no es compatible con HTML5
+		</video>
+	<!-- Here is "atributos" html5 -->
+		<!-- draggable: Si la etiqueta se puede transladar a otros lugares -->
+		<!-- contenteditable: El usuario puede editar el texto del HTML5 -->
+		<!-- hidden: Ocultar -->
+		<!-- spellcheck: Revisar ortografia del contenido que edita el usuario -->
+		<p draggable="true">Josue Daniel Bustamante</p>
+		<p contenteditable="true" spellcheck="true">Josue Daniel Bustamante</p>
+		<p hidden>Josue Daniel Bustamante - Esto no lo veras</p>
+	</body>
+</html>
