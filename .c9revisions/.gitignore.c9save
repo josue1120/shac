@@ -1,0 +1,13 @@
+{"ts":1353113399863,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1353113370477,"patch":[[{"diffs":[[1,".c"]],"start1":0,"start2":0,"length1":0,"length2":2}]],"length":2,"saved":false}
+{"ts":1353113370887,"patch":[[{"diffs":[[0,".c"],[1,"9"]],"start1":0,"start2":0,"length1":2,"length2":3}]],"length":3,"saved":false}
+{"ts":1353113373601,"patch":[[{"diffs":[[0,".c9"],[1,"revisions"]],"start1":0,"start2":0,"length1":3,"length2":12}]],"length":12,"saved":false}
+{"ts":1353113376601,"patch":[[{"diffs":[[0,"evisions"],[1,"/*\n"]],"start1":4,"start2":4,"length1":8,"length2":11}]],"length":15,"saved":false}
+{"ts":1353113377440,"patch":[[{"diffs":[[0,"sions/*\n"],[1,"."]],"start1":7,"start2":7,"length1":8,"length2":9}]],"length":16,"saved":false}
+{"ts":1353113380832,"patch":[[{"diffs":[[0,"ions/*\n."],[1,"refrenc"]],"start1":8,"start2":8,"length1":8,"length2":15}]],"length":23,"saved":false}
+{"ts":1353113382628,"patch":[[{"diffs":[[0,".refrenc"],[1,"ias"]],"start1":15,"start2":15,"length1":8,"length2":11}]],"length":26,"saved":false}
+{"ts":1353113383936,"patch":[[{"diffs":[[0,"s/*\n.ref"],[-1,"r"],[0,"encias"]],"start1":11,"start2":11,"length1":15,"length2":14}]],"length":25,"saved":false}
+{"ts":1353113385948,"patch":[[{"diffs":[[0,"/*\n.refe"],[1,"ren"],[0,"ncias"]],"start1":12,"start2":12,"length1":13,"length2":16}]],"length":28,"saved":false}
+{"ts":1353113387361,"patch":[[{"diffs":[[0,".referen"],[-1,"n"],[0,"cias"]],"start1":15,"start2":15,"length1":13,"length2":12}]],"length":27,"saved":false}
+{"ts":1353113389899,"patch":[[{"diffs":[[0,"erencias"],[1,"/*"]],"start1":19,"start2":19,"length1":8,"length2":10}]],"length":29,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1353276700349,"patch":[[{"diffs":[[0,"sions/*\n"],[-1,"."],[0,"referenc"]],"start1":7,"start2":7,"length1":17,"length2":16}]],"length":28,"saved":false}
