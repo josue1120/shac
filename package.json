@@ -1,8 +1,0 @@
-{
-    "name": "shac",
-    "version": "0.0.1"
-    "engines": {
-        "Node.js": "0.4.7"
-        "npm": "1.0.106"
-    }
-}
