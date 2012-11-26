@@ -30,9 +30,9 @@
         <div style="margin-top:63px;" class="navbar">
             <div class="navbar-inner">
                 <ul class="nav">
-                    <li class="active"><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html">Inicio</a></li>
                     <li><a href="calendar.html">Calendar</a></li>
-                    <li><a href="newsec.html">Section</a></li>
+                    <li class="active"><a href="newsec.html">Section</a></li>
                     <li><a href="newgro.html">Group</a></li>
                     <li><a href="newsub.html">Subject</a></li>
                     <li><a href="newact.html">Activity</a></li>
@@ -43,21 +43,25 @@
             <div class="row-fluid">
                 <div class="span2">
                     <div class="well sidebar-nav">
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat mattis risus sed bibendum. Mauris tempor augue in nunc faucibus dapibus. In malesuada dolor ac mi sagittis vestibulum.</span>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat mattis risus sed bibendum. Mauris tempor augue in nunc faucibus dapibus. In malesuada dolor ac mi sagittis vestibulum. Nunc et eros dolor, ut commodo tortor. Nam malesuada sodales ligula non vehicula. Sed luctus diam at metus aliquam condimentum. Suspendisse ultrices fermentum nisl vitae sagittis. Morbi id ipsum at enim eleifend commodo fermentum vitae quam.</span>
                     </div><!--/.well -->
                 </div><!--/span-->
             <div class="span10">
                 <div class="hero-unit">
-                    <h2>Institución Educativa</h2>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat mattis risus sed bibendum. Mauris tempor augue in nunc faucibus dapibus. In malesuada dolor ac mi sagittis vestibulum. Nunc et eros dolor, ut commodo tortor. Nam malesuada sodales ligula non vehicula. Sed luctus diam at metus aliquam condimentum. Suspendisse ultrices fermentum nisl vitae sagittis. Morbi id ipsum at enim eleifend commodo fermentum vitae quam.</span>
-                    <h2>Instrucciones</h2>
-                        <span>
-                            1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat mattis risus sed bibendum.<br />
-                            2. Mauris tempor augue in nunc faucibus dapibus. In malesuada dolor ac mi sagittis vestibulum.<br />
-                            3. Nunc et eros dolor, ut commodo tortor. Nam malesuada sodales ligula non vehicula.<br />
-                            4. Sed luctus diam at metus aliquam condimentum. Suspendisse ultrices fermentum nisl vitae sagittis.<br />
-                            5. Morbi id ipsum at enim eleifend commodo fermentum vitae quam.
-                        </span>
+                    <h2>Institución Educativa <small>Crear una nueva Sección</small></h2>
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label">Nombre de la Sección</label>
+                                <div class="controls">
+                                    <input id="nameNewSection" type="text" placeholder="Nombre de la Sección">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button id="CreateSection" type="submit" class="btn btn-primary btn-large">Crear Sección</button>
+                                </div>
+                            </div>
+                        </form>
                 </div>
             </div><!--/span-->
         </div><!--/row-->

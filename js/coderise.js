@@ -1,7 +1,4 @@
 (function() {
-    
-//          Function's read to Form's
-    //readingSubjects();
 
     StackMob.init({
         appName: "shac",
@@ -20,42 +17,33 @@
 		subjects.create();
     
         console.log("Are you creating a new subject called (" + nameSubject + ").");
-        
-        subjects = new Subjects();
-
-        subjects.fetch({
-            success: function(model) {
-                console.log(model.toJSON());
-            },
-            error: function(mode, response) {
-                console.log(response);
-            }
-        });
     });
 //              Ya esta listo
     $('#CreateGroup').click(function(e) {
         e.preventDefault();
         
         var nameGroup = $('#nameNewGroup').val();
-        var sectionGroup = $('#section').val();
+        var sectionGroup = $('#sectionsContainer').val();
         
         var Group = StackMob.Model.extend({ schemaName: 'group_name' });
         var group = new Group({ name: nameGroup , section: sectionGroup });
 		group.create();
     
         console.log("Are you creating a new group called (" + nameGroup + ") in the section (" + sectionGroup + ").");
-        
-        group = new Group();
-
-        group.fetch({
-            success: function(model) {
-                console.log(model.toJSON());
-            },
-            error: function(mode, response) {
-                console.log(response);
-            }
-        });
     });
+//              Ya esta listo
+    $('#CreateSection').click(function(e) {
+        e.preventDefault();
+    
+        var nameSection = $('#nameNewSection').val();
+        
+        var Section = StackMob.Model.extend({ schemaName: 'sections' });
+        var section = new Section({ sections: nameSection });
+		section.create();
+    
+        console.log("Are you creating a new section called (" + nameSection + ").");
+    });
+
 //              Para desarrollar
     $('#CreateActivity').click(function(e) {
         e.preventDefault();
@@ -67,33 +55,55 @@
     
         console.log("You are creating a new activity the day ("+ day +") in the subject ("+ subjet +") with the description of activity ("+ activity +").");
     });
+    
 //              DatePicker for day@CreateActivity
     $(function() {
         $( "#datepicker" ).datepicker({ showAnim: "slideDown" });
     });
-//              ReadingSubjects - Function - Para Desarrollar
-    /* var readingSubjects = function() {
-        //      The read function here
-        var nameSubject = $('#nameNewSubject').val();
-        
+
+//              ReadingSubjects - Function - Ya esta lista
+    var readingSubjects = function() {
         var Subjects = StackMob.Model.extend({ schemaName: 'subjects' });
-        var subjects = new Subjects({ subjects: nameSubject });
-        subjects.create();
         
         subjects = new Subjects();
-        
+    
         subjects.fetch({
             success: function(model) {
-                console.log(model.toJSON());
-                    $.each(items, function(ix, subjects); {
-                        $('#subjectContainer').append('<option>' + subjects + '</option>');
-                    });
+                var data = model.toJSON(); // Debes obtener los datos!
+                $.each(data, function(ix, subject) {
+                    $('#subjectContainer').append('<option>' + subject.subjects + '</option>');
+                    
+                });
             },
             error: function(mode, response) {
                 console.log(response);
             }
         });
-    }; */
+    };
+
+//              ReadingSections - Function - Ya esta lista
+    var readingSections = function() {        
+        var Sections = StackMob.Model.extend({ schemaName: 'sections' });
+        
+        sections = new Sections();
+    
+        sections.fetch({
+            success: function(model) {
+                var data = model.toJSON(); // Debes obtener los datos!
+                $.each(data, function(ix, sections) {
+                    $('#sectionsContainer').append('<option>' + sections.sections + '</option>');
+                    
+                });
+            },
+            error: function(mode, response) {
+                console.log(response);
+            }
+        });
+    };
+    
+//              Function's read to Form's
+    readingSubjects();
+    readingSections();
 })();
 
 //      Project base JsFiddle ==> http://jsfiddle.net/4Z44s/
