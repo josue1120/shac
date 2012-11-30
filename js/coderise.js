@@ -1,5 +1,9 @@
 (function() {
-
+    
+    var titleWeb = 'SHAC - Institución Educativa';
+    
+    $('#titleWeb').append( titleWeb );
+    
     StackMob.init({
         appName: "shac",
         clientSubdomain: "josue1120outlookcom",
@@ -43,24 +47,68 @@
     
         console.log("Are you creating a new section called (" + nameSection + ").");
     });
-
-//              Para desarrollar
+//              Ya esta listo
     $('#CreateActivity').click(function(e) {
         e.preventDefault();
-    
+        
         var day = $('#datepicker').val();
-        var subjet = $('#subjet').val();
+        var subject = $('#subjectContainer').val();
         var activity = $('#activity').val();
-        //entry.create();
-    
-        console.log("You are creating a new activity the day ("+ day +") in the subject ("+ subjet +") with the description of activity ("+ activity +").");
+        
+        var Activity = StackMob.Model.extend({ schemaName: 'activities' });
+        var newActivity = new Activity({ day: day , subject: subject , activity: activity });
+        newActivity.create();
+        
+        console.log("You are creating a new activity the day ("+ day +") in the subject ("+ subject +") with the description of activity ("+ activity +").");
     });
+
+
+//              Ya esta listo
+    $('#RegisterUser').click(function(e) {
+        e.preventDefault();
     
+        var userRegister = $('#userRegister').val();
+        var passRegister = $('#passRegister').val();
+        
+        var UserRDB = StackMob.Model.extend({ schemaName: 'user' });
+        var userrdb = new UserRDB({ user: userRegister , pass: passRegister });
+        userrdb.create({
+            success: function(model) {
+                console.debug("User object is saved, The username is: " + userRegister );
+                alert("The User is created, The username is: " + userRegister );
+            },
+            error: function(model, response) {
+                console.debug(response);
+            }
+        });
+    });
+//              Desarrollando                                       Desarrollando
+    $('#LoginUser').click(function(e) {
+        e.preventDefault();
+    
+        var userLogin = $('#userLogin').val();
+        var passLogin = $('#passLogin').val();
+        
+        var User = StackMob.Model.extend({ schemaName: 'user' });
+        var userLDB = new StackMob.User({ user: 'test' , pass: 'test' });
+        userLDB.login(false, {
+            success: function(model) {
+                window.location="panel.html";
+                console.log("good luck");
+                console.debug(model);
+            },
+            error: function(model, response) {
+                console.log("bad luk");
+                console.debug(response);
+            }
+        });
+    });
+
+
 //              DatePicker for day@CreateActivity
     $(function() {
         $( "#datepicker" ).datepicker({ showAnim: "slideDown" });
     });
-
 //              ReadingSubjects - Function - Ya esta lista
     var readingSubjects = function() {
         var Subjects = StackMob.Model.extend({ schemaName: 'subjects' });
@@ -80,7 +128,6 @@
             }
         });
     };
-
 //              ReadingSections - Function - Ya esta lista
     var readingSections = function() {        
         var Sections = StackMob.Model.extend({ schemaName: 'sections' });
@@ -100,12 +147,33 @@
             }
         });
     };
+//              ReadingActivities - Function - Ya esta listo
+    var readingActivities = function() {        
+        var Activities = StackMob.Model.extend({ schemaName: 'activities' });
+        
+        activities = new Activities();
     
+        activities.fetch({
+            success: function(model) {
+                var data = model.toJSON(); // Debes obtener los datos!
+                console.log( data )
+                $.each(data, function(ix, entry) {
+                    $('#tableContainer').append('<tr>' + '<td>' + entry.day + '</td>' + '<td>' + entry.subject + '</td>' + '<td>' + entry.activity + '</td>' + '</tr>');
+                   // console.log( activities.day + activities.subject + activities.activity );
+                });
+            },
+            error: function(mode, response) {
+                console.log(response);
+            }
+        });
+    };
+
+
 //              Function's read to Form's
     readingSubjects();
     readingSections();
+    readingActivities();
 })();
-
 //      Project base JsFiddle ==> http://jsfiddle.net/4Z44s/
 //      Project of Fetch ==> http://jsfiddle.net/Kgkq7/1/
 //      Project of jQuery ==> http://jsfiddle.net/HwEg4/1/

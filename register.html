@@ -33,10 +33,10 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="calendar.html">Calendar</a></li>
                     <li><a href="newsec.html">Section</a></li>
-                    <li class="active"><a href="newgro.html">Group</a></li>
+                    <li><a href="newgro.html">Group</a></li>
                     <li><a href="newsub.html">Subject</a></li>
                     <li><a href="newact.html">Activity</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li class="active"><a href="register.html">Register</a></li>
                     <li><a href="login.html">Login</a></li>
                 </ul>
             </div>
@@ -50,24 +50,23 @@
                 </div><!--/span-->
             <div class="span10">
                 <div class="hero-unit">
-                    <h2>Institución Educativa <small>Crear un nuevo grupo</small></h2>
+                    <h2>Institución Educativa <small>Register User - Panel de Control</small></h2>
                         <form class="form-horizontal">
                             <div class="control-group">
-                                <label class="control-label">Nombre de Grupo</label>
+                                <label class="control-label" for="inputText">Username</label>
                                 <div class="controls">
-                                    <input id="nameNewGroup" type="text" placeholder="Nombre de Grupo">
+                                    <input type="text" id="userRegister" placeholder="Username">
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Sección</label>
+                                <label class="control-label" for="inputPassword">Password</label>
                                 <div class="controls">
-                                    <select id="sectionsContainer">
-                                    </select>
+                                    <input type="password" id="passRegister" placeholder="Password">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="controls">
-                                    <button id="CreateGroup" type="submit" class="btn btn-primary btn-large">Crear Grupo</button>
+                                    <button id="RegisterUser" type="submit" class="btn btn-primary btn-large">Register</button>
                                 </div>
                             </div>
                         </form>
