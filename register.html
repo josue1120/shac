@@ -12,6 +12,7 @@
     <!-- Fin Hojas de Estilo - StyleSheet -->
     </head>
     <body>
+        <div id="ifLogin"></div>
         <div class="navbar navbar-fixed-top navbar-inverse">
             <div class="navbar-inner">
                 <div style="margin-top:10px; margin-bottom:10px;" class="row-fluid">
@@ -30,14 +31,10 @@
         <div style="margin-top:63px;" class="navbar">
             <div class="navbar-inner">
                 <ul class="nav">
-                    <li><a href="index.html">Inicio</a></li>
+                    <!-- <li><a href="index.html">Inicio</a></li> -->
                     <li><a href="calendar.html">Calendar</a></li>
-                    <li><a href="newsec.html">Section</a></li>
-                    <li><a href="newgro.html">Group</a></li>
-                    <li><a href="newsub.html">Subject</a></li>
-                    <li><a href="newact.html">Activity</a></li>
-                    <li class="active"><a href="register.html">Register</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li class="active"><a href="panel.html">Panel</a></li>
+                    <li id="LogoutUser"><a href="#">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -45,52 +42,46 @@
             <div class="row-fluid">
                 <div class="span2">
                     <div class="well sidebar-nav">
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat mattis risus sed bibendum. Mauris tempor augue in nunc faucibus dapibus. In malesuada dolor ac mi sagittis vestibulum. Nunc et eros dolor, ut commodo tortor. Nam malesuada sodales ligula non vehicula. Sed luctus diam at metus aliquam condimentum. Suspendisse ultrices fermentum nisl vitae sagittis. Morbi id ipsum at enim eleifend commodo fermentum vitae quam.</span>
+                        <ul class="nav nav-list">
+                            <li><a href="panel.html">Inicio</a></li>
+                            <li><a href="newact.html">Nueva Actividad</a></li>
+                            <li><a href="newsub.html">Nueva Materia</a></li>
+                            <li><a href="newgro.html">Nuevo Grupo</a></li>
+                            <li><a href="newsec.html">Nueva Sección</a></li>
+                            <li class="active"><a href="register.html">Nuevo Usuario</a></li>
+                        </ul>
                     </div><!--/.well -->
                 </div><!--/span-->
-            <div class="span10">
-                <div class="hero-unit">
-                    <h2>Institución Educativa <small>Register User - Panel de Control</small></h2>
-                        <form class="form-horizontal">
-                            <div class="control-group">
-                                <label class="control-label" for="inputText">Username</label>
-                                <div class="controls">
-                                    <input type="text" id="userRegister" placeholder="Username">
+                <div class="span10">
+                    <div class="hero-unit">
+                        <h2>S.H.A.C <small>Registrar Usuario - Panel de Control</small></h2>
+                            <form class="form-horizontal">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputText">Username</label>
+                                    <div class="controls">
+                                        <input type="text" id="userRegister" placeholder="Username">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="control-group">
-                                <label class="control-label" for="inputPassword">Password</label>
-                                <div class="controls">
-                                    <input type="password" id="passRegister" placeholder="Password">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputPassword">Password</label>
+                                    <div class="controls">
+                                        <input type="password" id="passRegister" placeholder="Password">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="controls">
-                                    <button id="RegisterUser" type="submit" class="btn btn-primary btn-large">Register</button>
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <button id="RegisterUser" type="submit" class="btn btn-primary btn-large">Register</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                </div>
-            </div><!--/span-->
-        </div><!--/row-->
-    <!-- Beginnings Widget Footer -->
-        <hr>
-            <div class="row-fluid">
-                <div class="span4"><!-- Please leave this space empty --></div>
-                <div class="span4 well">
-                    <center>
-                        <h3>Support</h3>
-                        <h5>Josue Bustamante<br /><small>Oficina: +57 (4) 437-8477<br />Movil: +57 (316) 894-3574<br />E-mail: josue1120@outlook.com</small></h5>
-                    </center>
-                </div>
-                <div class="span4"><!-- Please leave this space empty --></div>
-            </div>
-    <!-- Concluding Widget Footer -->
-        <hr>
-        <footer>
-            <center><p>© Team Creativity Express - 2012</p></center>
-        </footer>
-    </div><!--/.fluid-container-->
+                            </form>
+                    </div>
+                </div><!--/span-->
+            </div><!--/row-->
+            <hr>
+            <footer>
+                <center><p>© ProgAndArt - 2013</p></center>
+            </footer>
+        </div><!--/.fluid-container-->
     
     <!-- Le javascript
     ================================================== -->

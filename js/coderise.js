@@ -1,6 +1,6 @@
 (function() {
     
-    var titleWeb = 'SHAC - Institución Educativa';
+    var titleWeb = 'S.H.A.C - Sistema de Horarios y Actividades para Colegios';
     
     $('#titleWeb').append( titleWeb );
     
@@ -34,6 +34,7 @@
 		group.create();
     
         console.log("Are you creating a new group called (" + nameGroup + ") in the section (" + sectionGroup + ").");
+        alert("Are you creating a new group called (" + nameGroup + ") in the section (" + sectionGroup + ").");
     });
 //              Ya esta listo
     $('#CreateSection').click(function(e) {
@@ -54,12 +55,13 @@
         var day = $('#datepicker').val();
         var subject = $('#subjectContainer').val();
         var activity = $('#activity').val();
+        var group = $('#groupContainer').val();
         
         var Activity = StackMob.Model.extend({ schemaName: 'activities' });
-        var newActivity = new Activity({ day: day , subject: subject , activity: activity });
+        var newActivity = new Activity({ group: group, day: day , subject: subject , activity: activity });
         newActivity.create();
         
-        console.log("You are creating a new activity the day ("+ day +") in the subject ("+ subject +") with the description of activity ("+ activity +").");
+        console.log("You are creating a new activity in the group ("+ group +"), in the day ("+ day +"), in the subject ("+ subject +") with the description of activity ("+ activity +").");
     });
 
 
@@ -71,7 +73,7 @@
         var passRegister = $('#passRegister').val();
         
         var UserRDB = StackMob.Model.extend({ schemaName: 'user' });
-        var userrdb = new UserRDB({ user: userRegister , pass: passRegister });
+        var userrdb = new UserRDB({ username: userRegister , password: passRegister });
         userrdb.create({
             success: function(model) {
                 console.debug("User object is saved, The username is: " + userRegister );
@@ -82,34 +84,75 @@
             }
         });
     });
-//              Desarrollando                                       Desarrollando
+//              Ya esta listo
     $('#LoginUser').click(function(e) {
         e.preventDefault();
-    
+        
         var userLogin = $('#userLogin').val();
         var passLogin = $('#passLogin').val();
         
-        var User = StackMob.Model.extend({ schemaName: 'user' });
-        var userLDB = new StackMob.User({ user: 'test' , pass: 'test' });
-        userLDB.login(false, {
+        var user = new StackMob.User({ username: userLogin, password: passLogin });
+        
+        //Makes a call to StackMob to request a login
+        user.login(false, {
             success: function(model) {
+                //show a success message/update your UI
+                $('#alert-success').append('<center><div class="alert alert-success" style="font-size:12px"><button type="button" class="close" data-dismiss="alert">&times;</button>Good luck, The username or password is correct</div></center>');
                 window.location="panel.html";
-                console.log("good luck");
-                console.debug(model);
+                console.log("Good luck");
             },
             error: function(model, response) {
-                console.log("bad luk");
-                console.debug(response);
+                //show a failure message in your app
+                console.log("Bad luck, The username or password is incorrect");
+                $('#alert-error').append('<center><div class="alert alert-error" style="font-size:12px"><button type="button" class="close" data-dismiss="alert">&times;</button>Bad luck, The username or password is incorrect</div></center>');
             }
         });
     });
+//              Ya esta listo
+    $('#LogoutUser').click(function(e) {
+        e.preventDefault();
+        
+        var user = new StackMob.User( { username: StackMob.getLoggedInUser() } );
+ 
+        //Makes a call to StackMob to logout
+        user.logout({
+            success: function() {
+                //show a success message/update your UI
+                window.location="login.html";
+            },
+            error: function() {
+                //show a failure message in your app
+                console.log("Bad luck");
+            }
+        });
+    });
+//              Ya esta listo
+    $('#ifLogin').before(function(e) {
+        
+        if ( StackMob.isLoggedIn() === true) {
+            console.log("It's Logged In");
+        } else {
+            window.location="login.html";
+        }
+    });
+//              Ya esta listo
+    $('#ifLoginPanel').before(function(e) {
+        
+        if ( StackMob.isLoggedIn() === true) {
+            console.log("It's Logged In");
+            window.location="panel.html";
+        } else {
+            console.log("It's not Logged In");
+        }
+    });
 
-
-//              DatePicker for day@CreateActivity
+//              DatePicker for day@CreateActivity - Ya esta listo
     $(function() {
         $( "#datepicker" ).datepicker({ showAnim: "slideDown" });
     });
-//              ReadingSubjects - Function - Ya esta lista
+
+
+//              ReadingSubjects - Function - Ya esta listo
     var readingSubjects = function() {
         var Subjects = StackMob.Model.extend({ schemaName: 'subjects' });
         
@@ -128,7 +171,7 @@
             }
         });
     };
-//              ReadingSections - Function - Ya esta lista
+//              ReadingSections - Function - Ya esta listo
     var readingSections = function() {        
         var Sections = StackMob.Model.extend({ schemaName: 'sections' });
         
@@ -147,7 +190,46 @@
             }
         });
     };
-//              ReadingActivities - Function - Ya esta listo
+//              ReadingGroups - Function - Ya esta listo
+    var readingGroups = function() {
+        var Groups = StackMob.Model.extend({ schemaName: 'group_name' });
+        
+        groups = new Groups();
+    
+        groups.fetch({
+            success: function(model) {
+                var data = model.toJSON(); // Debes obtener los datos!
+                $.each(data, function(ix, name) {
+                    $('#groupContainer').append('<option>' + name.name + '</option>');
+                    
+                });
+            },
+            error: function(mode, response) {
+                console.log(response);
+            }
+        });
+    };
+//              ReadingGroupsCal - Function - Ya esta listo
+    var readingGroupsCal = function() {
+        var Groups = StackMob.Model.extend({ schemaName: 'group_name' });
+        
+        groups = new Groups();
+    
+        groups.fetch({
+            success: function(model) {
+                var data = model.toJSON(); // Debes obtener los datos!
+                $.each(data, function(ix, name) {
+                    var group = name.name;
+                    $('#groups').append('<li id="' + group + '"><a href="#' + group + '"> ' + group + '</a></li>');
+                    
+                });
+            },
+            error: function(mode, response) {
+                console.log(response);
+            }
+        });
+    };
+//              ReadingActivities - Function - Ya esta listo                    Falta el Filtrado de datos - Terminar de Desarrollar
     var readingActivities = function() {        
         var Activities = StackMob.Model.extend({ schemaName: 'activities' });
         
@@ -173,7 +255,10 @@
     readingSubjects();
     readingSections();
     readingActivities();
+    readingGroups();
+    readingGroupsCal();
 })();
 //      Project base JsFiddle ==> http://jsfiddle.net/4Z44s/
 //      Project of Fetch ==> http://jsfiddle.net/Kgkq7/1/
 //      Project of jQuery ==> http://jsfiddle.net/HwEg4/1/
+//      User Authentication API ==> https://www.stackmob.com/devcenter/docs/User-Authentication-API
